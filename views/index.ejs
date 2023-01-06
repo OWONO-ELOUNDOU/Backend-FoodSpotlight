@@ -1,0 +1,30 @@
+
+<form method="post" action="/dishes/add">
+    <label>Dish name</label>
+    <input type="text" name="name" placeholder="name">
+    <br>
+    <label>Quantity</label>
+    <input type="number" name="quantity" placeholder="grammes">
+    <br>
+    <input type="submit" value="send">
+</form>
+<br>
+<form method="post" action="/user/add">
+    <label>name</label>
+    <input type="text" name="name" placeholder="username">
+    <br>
+    <label>email</label>
+    <input type="email" name="email" placeholder="email address">
+    <br>
+    <label>password</label>
+    <input type="password" name="password" placeholder="password">
+    <br>
+    <input type="submit" value="send">
+</form>
+
+<h1>Plats</h1>
+<ul>
+    <% dishes.forEach(function(dish){ %>
+        <li><%= dish.name %>&nbsp;&nbsp;<%= dish.Qty %>&nbsp;&nbsp;<%= dish.date %>&nbsp;&nbsp;<%= dish.disease %></li>
+    <% }) %>
+</ul>
