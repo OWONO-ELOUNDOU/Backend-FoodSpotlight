@@ -10,10 +10,12 @@ router.post('/', function(req, res) {
     var name = req.body.name;
     var email = req.body.email;
     var password = req.body.password;
+    var weight = req.body.weight;
+    var height = req.body.height;
 
     const results = session.run(
-        'CREATE(personne:user{name: $nameParams, email: $emailParams, password: $pwdParams})',
-        {nameParams: name, emailParams: email, pwdParams: password}
+        'CREATE(personne:user{name: $nameParams, email: $emailParams, password: $pwdParams, weight: $weightParams, height: $heightParams})',
+        {nameParams: name, emailParams: email, pwdParams: password, weightParams: weight, heightParams: height}
     );
 
     results.then(async results => {

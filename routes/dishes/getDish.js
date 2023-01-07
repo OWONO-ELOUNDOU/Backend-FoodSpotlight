@@ -12,6 +12,7 @@ router.get('/', function(req, res) {
         .then(function(result){
             var dishArr = [];
             result.records.forEach(function(record){
+                console.log(record._fields[0].properties);
                 dishArr.push({
                     id: record._fields[0].identity.low,
                     name: record._fields[0].properties.name,
@@ -19,11 +20,14 @@ router.get('/', function(req, res) {
                     date: record._fields[0].properties.date,
                     disease: record._fields[0].properties.disease
                 });
-                console.log(record._fields[0].properties);
             });
+            console.log(dishArr);
+            
+            /*
             res.render('index', {
                 dishes: dishArr
             });
+            */
         })
         .catch(function(err){
             console.log(err);
